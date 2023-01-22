@@ -26,7 +26,7 @@ function AddPlacePopup({ isOpen, onClose, onAddCard }) {
       id="2"
       title="Новое место"
       name="add"
-      button="Создать"
+      buttonText="Создать"
       isOpen={isOpen && "popup_opened"}
       onClose={onClose}
       onSubmit={handleSubmit}
@@ -37,7 +37,7 @@ function AddPlacePopup({ isOpen, onClose, onAddCard }) {
           className="popup__input"
           id="title"
           name="title"
-          value={title}
+          value={title || ""}
           onChange={handleTitleChange}
           placeholder="Название"
           minLength="2"
@@ -52,7 +52,7 @@ function AddPlacePopup({ isOpen, onClose, onAddCard }) {
           className="popup__input"
           id="link"
           name="link"
-          value={link}
+          value={link || ""}
           onChange={handleLinkChange}
           placeholder="Ссылка на картинку"
           required

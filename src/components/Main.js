@@ -1,5 +1,6 @@
 import Card from "./Card";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+import CardContext from "../contexts/CardContext";
 import { useContext } from "react";
 
 function Main({
@@ -11,6 +12,7 @@ function Main({
   cardLike,
 }) {
   const currentUser = useContext(CurrentUserContext);
+  const cards = useContext(CardContext);
 
   return (
     <main className="main">
@@ -42,12 +44,21 @@ function Main({
           onClick={onAddPlace}
         ></button>
       </section>
-      <Card
-        onCardClick={cardClick}
-        onCardLike={cardLike}
-        currentUser={currentUser}
-        onCardDelete={onCardDelete}
-      />
+      <section className="cards">
+        <ul className="cards__table">
+          {cards.map((card, _id) => {
+            return (
+              <Card
+                card={card}
+                onCardClick={cardClick}
+                onCardLike={cardLike}
+                currentUser={currentUser}
+                onCardDelete={onCardDelete}
+              />
+            );
+          })}
+        </ul>
+      </section>
     </main>
   );
 }

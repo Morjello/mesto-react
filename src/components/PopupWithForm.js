@@ -5,7 +5,7 @@ function PopupWithForm({
   isOpen,
   children,
   onClose,
-  button,
+  buttonText,
   onSubmit,
 }) {
   return (
@@ -17,12 +17,11 @@ function PopupWithForm({
             className="popup__form profile-popup__form"
             name={name}
             id={id}
-            noValidate
             onSubmit={onSubmit}
           >
             {children}
             <button className="popup__button" type="submit">
-              {button}
+              {buttonText}
             </button>
           </form>
           <button

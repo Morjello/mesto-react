@@ -16,12 +16,12 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
       id="4"
       title="Обновить аватар"
       name="avatar"
-      button="Сохранить"
+      buttonText="Сохранить"
       isOpen={isOpen && "popup_opened"}
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <lable className="popup__label">
+      <div className="popup__label">
         <input
           ref={avatarRef}
           type="url"
@@ -32,7 +32,7 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
           required
         />
         <span className="popup__error avatar-link-error"></span>
-      </lable>
+      </div>
     </PopupWithForm>
   );
 }
