@@ -10,7 +10,7 @@ function PopupWithForm({
 }) {
   return (
     <div className="root__wrapper">
-      <div className={`popup popup-${name} ${isOpen}`}>
+      <div className={`popup popup-${name} ${isOpen && "popup_opened"}`}>
         <div className="popup__container">
           <h2 className="popup__title">{title}</h2>
           <form

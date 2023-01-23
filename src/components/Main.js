@@ -7,7 +7,8 @@ function Main({
   onEditAvatar,
   onEditProfile,
   onAddPlace,
-  onCardDelete,
+  onDeletePlace,
+  setCard,
   cardClick,
   cardLike,
 }) {
@@ -49,11 +50,13 @@ function Main({
           {cards.map((card, _id) => {
             return (
               <Card
+                key={_id}
+                setCard={setCard}
                 card={card}
                 onCardClick={cardClick}
                 onCardLike={cardLike}
                 currentUser={currentUser}
-                onCardDelete={onCardDelete}
+                onDeletePlace={onDeletePlace}
               />
             );
           })}

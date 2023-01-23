@@ -34,7 +34,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
       title="Редактировать профиль"
       name="profile"
       buttonText="Сохранить"
-      isOpen={isOpen && "popup_opened"}
+      isOpen={isOpen}
       onClose={onClose}
       onSubmit={handleSubmit}
     >
